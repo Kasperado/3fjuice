@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <navbar
+      :navElements="['Home','About','Testimonials','Plan','Contact']"
+      :navWidth='1200'
+      title="3F Juice"
+    ></navbar>
+    <intro></intro>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import navbar from './components/navbar.vue'
+import intro from './components/intro.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    navbar,
+    intro
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+* {
+  box-sizing: border-box;
 }
+
+html, body {
+  font-family: 'Vollkorn', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #232425;
+}
+
+::selection {
+  color: black;
+  background: orange;
+}
+
 </style>
