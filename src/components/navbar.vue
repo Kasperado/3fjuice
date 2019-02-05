@@ -13,7 +13,7 @@
         </div>
         <ul ref="cm">
           <li v-for="n in navElements" :key="n">
-            <a class="list_link" @click="toggleMenu" v-scroll-to="n">{{n}}</a>
+            <a class="list_link" @click="toggleMenu" v-scroll-to="'#'+(n.toLowerCase())">{{n}}</a>
           </li>
         </ul>
         <div @click="toggleMenu" class="mobile_menu">
@@ -73,6 +73,7 @@ export default {
                   timer += 100; });
 
             }
+
               this.navBusy = true;
             setTimeout(() => {
               this.navBusy = false;
@@ -117,6 +118,10 @@ export default {
   $textShadow: #DDD;
   $borderColor: #FFA500;
 
+  a {
+    text-decoration: none;
+  }
+
   .nav_filler {
     height: 10vh;
   }
@@ -136,7 +141,6 @@ export default {
       .logo {
         a {
           height: 100%;
-          text-decoration: none;
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -174,11 +178,12 @@ export default {
     list-style-type: none;
     position: absolute;
     top: calc(100% + 1px);
+    transform: translate(100%,0);
     width: 100%;
     align-items: center;
     flex-direction: column;
     li {
-      transform: translate(100%,0);
+      padding: 4px 0;
       width: 100%;
       cursor: pointer;
       border-bottom: 1px solid $borderColor;
@@ -188,7 +193,6 @@ export default {
         color: orange;
         padding: 8px;
         display: block;
-        text-decoration: none;
         color: orange;
         font-weight: bold;
         font-style: italic;
@@ -197,7 +201,7 @@ export default {
   }
 
   .list_element_active {
-    transform: translate(0,0);
+    transform: translate(-100%,0);
   }
 
   .navbar_scroll {
@@ -229,8 +233,8 @@ export default {
           position: static;
           flex-direction: row;
           margin-right: 18px;
+          transform: translate(0,0);
           li {
-            transform: translate(0,0);
             background-color: transparent;
             padding: 0 10px;
             width: auto;

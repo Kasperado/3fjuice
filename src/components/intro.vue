@@ -1,10 +1,10 @@
 <template>
-  <section>
+  <section id="home">
     <div class="productText">
       <div class="flex_item">
         <h1>What is <i>3F Juice</i> ?</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="btn">Wow! Sign me up!</div>
+        <btn v-scroll-to="'#plan'" text="Wow! Sign me up!"></btn>
       </div>
     </div>
     <div class="productImage">
@@ -14,8 +14,13 @@
 </template>
 
 <script>
+import btn from "./btn.vue"
+
 export default {
   name: 'intro',
+  components: {
+    btn
+  }
 };
 </script>
 
@@ -26,11 +31,9 @@ i {
 }
 
 section {
-  z-index: 1;
   height: auto;
   width: 100vw;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -39,6 +42,7 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: auto;
 }
 
 .productText {
@@ -47,10 +51,7 @@ section {
   text-align: center;
   .flex_item {
     max-width: 500px;
-    height: 50vh;
-    h1 {
-      font-size: 32px;
-    }
+    padding-bottom: 12px;
     p {
       line-height: 30px;
       font-size: 22px;
@@ -78,7 +79,7 @@ section {
 
 .productImage {
   order: 1;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 60% 78%, 28% 64%, 6% 31%);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 60% 78%, 26% 64%, 6% 31%);
   background: rgb(231,171,59);
   background: linear-gradient(16deg, rgba(231,171,59,1) 0%, rgba(209,129,24,1) 48%, rgba(210,95,0,0.98) 100%);
   img {
@@ -90,18 +91,27 @@ section {
 @media only screen and (min-width: 732px) {
 
 section {
+  justify-content: space-between;
   flex-direction: row;
+  height: 100vh;
+}
+
+.productText, .productImage {
   height: 100vh;
 }
 
 .productText {
   order: 1;
-  width: 40%
+  width: 40%;
 }
 
 .productImage {
   order: 2;
   width: 60%;
+}
+
+.flex_item {
+  height: 50vh;
 }
 
 }
