@@ -4,7 +4,7 @@
       <div class="flex_item">
         <h1>What is <i>3F Juice</i> ?</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <btn v-scroll-to="'#plan'" text="Wow! Sign me up!"></btn>
+        <btn v-scroll-to="{el: '#plan', offset: -40}" text="Wow! Sign me up!"></btn>
       </div>
     </div>
     <div class="productImage">

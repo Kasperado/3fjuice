@@ -40,6 +40,9 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #232425;
+  // Mozilla
+  scrollbar-color: orange black;
+  scrollbar-width: thin;
 }
 
 ::selection {
