@@ -88,7 +88,7 @@ section {
   }
 }
 
-@media only screen and (min-width: 732px) {
+@media only screen and (min-width: $minWidth) {
 
 section {
   justify-content: space-between;

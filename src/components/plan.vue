@@ -10,7 +10,7 @@
         <input type="range" min="1" max="7" value="4" class="slider" @input="timeChange">
         <p ref="size"><i>Six</i> pack</p>
         <input type="range" min="1" max="5" value="3" class="slider" @input="sizeChange">
-        <p class="info_helper">Fill this information to see if we can meet your demands</p>
+        <p class="info_helper">Fill this information and we will contact you within 24 hours for details</p>
         <formOrange></formOrange>
       </div>
     </div>
@@ -141,7 +141,7 @@ p {
   font-weight: 400;
 }
 
-@media only screen and (min-width: 732px) {
+@media only screen and (min-width: $minWidth) {
 
   section {
     min-height: 80vh;

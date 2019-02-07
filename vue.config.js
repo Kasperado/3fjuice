@@ -1,4 +1,11 @@
 // vue.config.js
 module.exports = {
-   publicPath: "vueBuild"
+   publicPath: "",
+   css: {
+    loaderOptions: {
+      sass: {
+        data: `@import "@/vars.scss";`
+      }
+    }
+  }
 }

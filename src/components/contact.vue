@@ -67,7 +67,7 @@ section {
   flex-direction: column;
 }
 
-@media only screen and (min-width: 732px) {
+@media only screen and (min-width: $minWidth) {
 
   .contact_containter {
     min-height: 80vh;

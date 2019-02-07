@@ -6,7 +6,7 @@
         <div class="logo">
           <a href="#">
             <div v-if='logo' class="img_flex">
-              <img src="@/assets/logo.png" alt="logo" />
+              <img :src="logoSrc" alt="logo" />
             </div>
             <p>{{ title }}</p>
           </a>
@@ -32,7 +32,8 @@ export default {
   data() {
     return{
       navOpen: false,
-      navBusy: false
+      navBusy: false,
+      minWidth: 824
     }
   },
   props: {
@@ -54,7 +55,7 @@ export default {
   methods: {
 
     toggleMenu() {
-        if(!this.navBusy && screen.width <= 730){
+        if(!this.navBusy && screen.width <= this.minWidth) {
           var timer = 0;
           if (this.navOpen) {
 
@@ -84,7 +85,7 @@ export default {
 
     scrollFun() {
       //Closing Nav
-      if(this.navOpen && window.innerWidth < 730) {
+      if(this.navOpen && window.innerWidth < this.minWidth) {
         var timer = 0;
           [].slice.call(document.querySelectorAll('li'), 0).reverse().forEach((e) => {
               setTimeout(() => {
@@ -94,7 +95,7 @@ export default {
       }
 
       //Scrolling
-      if ((document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) || window.innerWidth < 730){
+      if ((document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) || window.innerWidth < this.minWidth) {
         document.querySelector('.nav_background').classList.add('navbar_scroll');
       } else {
         document.querySelector('.nav_background').classList.remove('navbar_scroll');
@@ -214,7 +215,7 @@ export default {
     transition: 0.4s;
   }
 
-  @media (min-width: 730px) {
+  @media (min-width: $minWidth) {
 
     .nav_filler {
       height: 0;
